@@ -1,0 +1,683 @@
+            <div class="row-fluid">
+    <div class="span12">
+        <div class="portlet box pink">
+            <div class="portlet-title">
+                <div class="caption"><i class="icon-cogs"></i>SSHウェブコンソール</div>
+            </div>
+            <div class="portlet-body form ssh_cli">
+<!--                <form action="#" class="form-horizontal form-bordered form-row-stripped">-->
+                    <form method="post" action="console.php" id="ssh_console">
+                        <textarea id="win" class="" readonly="readonly"></textarea>
+                        <div id="dark">
+                            <div class="input-prepend">
+                                <span class="add-on" id="cwd">hiroki7v11$ [<span id="currentPath">/home/hiroki7v11/</span>]</span>
+                                <input type="text" name="command" id="command">
+                            </div>
+                        </div>
+                        <input type="hidden" name="path" id="path" size="10" value="">
+                        <input type="submit" name="execute" value="&gt;" style="display:none;">
+                        <input type="hidden" name="token" value="166d8c827d8a89523462a08f90ce7ca7"/>
+                    </form>
+<!--                </form>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Form end-->
+
+<!--Table start-->
+<div class="row-fluid">
+<div class="span12">
+<div class="portlet box pink">
+<div class="portlet-title">
+    <div class="caption">
+        <i class="icon-cogs"></i>
+        使用可能なSSHコマンド    </div>
+</div>
+<div class="portlet-body">
+<div class="ssh_cli_comm">
+<button type="button" value="clear" name="clear" class="clear_cli btn">clear</button>
+<button type="button" value="clear" name="clear" class="clear_cli btn">exit</button>
+<button type="button" value="arch" name="arch" class="comm btn">arch</button>
+<button type="button" value="bzip2" name="bzip2" class="comm btn">bzip2</button>
+<button type="button" value="cal" name="cal" class="comm btn">cal</button>
+<button type="button" value="cksum" name="cksum" class="comm btn">cksum</button>
+<button type="button" value="cmp" name="cmp" class="comm btn">cmp</button>
+<button type="button" value="cp" name="cp" class="comm btn">cp</button>
+<button type="button" value="crontab" name="crontab" class="comm btn">crontab</button>
+<button type="button" value="basename" name="basename" class="comm btn">basename</button>
+<button type="button" value="cd" name="cd" class="comm btn">cd</button>
+<button type="button" value="chmod" name="chmod" class="comm btn">chmod</button>
+<button type="button" value="ls" name="ls" class="comm btn">ls</button>
+<button type="button" value="date" name="date" class="comm btn">date</button>
+<button type="button" value="df" name="df" class="comm btn">df</button>
+<button type="button" value="du" name="du" class="comm btn">du</button>
+<button type="button" value="dos2unix" name="dos2unix" class="comm btn">dos2unix</button>
+<button type="button" value="unix2dos" name="unix2dos" class="comm btn">unix2dos</button>
+<button type="button" value="file" name="file" class="comm btn">file</button>
+<button type="button" value="getfacl" name="getfacl" class="comm btn">getfacl</button>
+<button type="button" value="gzip" name="gzip" class="comm btn">gzip</button>
+<button type="button" value="head" name="head" class="comm btn">head</button>
+<button type="button" value="hostid" name="hostid" class="comm btn">hostid</button>
+<button type="button" value="tail" name="tail" class="comm btn">tail</button>
+<button type="button" value="mkdir" name="mkdir" class="comm btn">mkdir</button>
+<button type="button" value="mv" name="mv" class="comm btn">mv</button>
+<button type="button" value="nslookup" name="nslookup" class="comm btn">nslookup</button>
+<button type="button" value="sdiff" name="sdiff" class="comm btn">sdiff</button>
+<button type="button" value="uptime" name="uptime" class="comm btn">uptime</button>
+<button type="button" value="whois" name="whois" class="comm btn">whois</button>
+
+<div class="comm_man" id="comm_arch" style="display: none;">
+    <dl>
+        <dt>詳細：</dt>
+        <dd>マシーン・アーキテクチャー・タイプを標準形式で出力する。uname -mと同等。</dd>
+
+
+        <dt>例：</dt>
+        <dd><pre>arch</pre></dd>
+    </dl>
+</div>
+<div class="comm_man" id="comm_bzip2" style="display: none;">
+    <dl>
+        <dt>詳細：</dt>
+        <dd>bzip2はブロックソート法（バロウズ-ホイラー変換）とMTF (Move-To-Front) 法、ハフマン符号化法を用いてファイルを圧縮します。従来のgzipやZIPといったデータ圧縮法と比べ、より高い圧縮率を誇っています。</dd>
+
+        <dt>オプション：</dt>
+        <dd>
+            <dl>
+                <dt><a href="-c" class="opt">-c</a></dt>
+                <dd>圧縮、または標準形式の出力に復元する。</dd>
+                <dt><a href="-d" class="opt">-d</a></dt>
+                <dd>強制展開する</dd>
+                <dt><a href="-f" class="opt">-f</a></dt>
+                <dd>出力されたファイルを強制的に上書きする（標準では上書きされません。また、このオプションはファイルへのハードリンクを強制的に無効にします。）</dd>
+                <dt><a href="-k" class="opt">-k</a></dt>
+                <dd>入力ファイルを削除せずに保管する。</dd>
+                <dt><a href="-q" class="opt">-q</a></dt>
+                <dd>重要なメッセージのみ出力する。</dd>
+                <dt><a href="-s" class="opt">-s</a></dt>
+                <dd>実行速度を犠牲にして、メモリーをセーブする</dd>
+                <dt><a href="-z" class="opt">-z</a></dt>
+                <dd>強制圧縮する</dd>
+            </dl>
+        </dd>
+
+        <dt>例：</dt>
+        <dd><pre>bzip2 -c fileone.txt filetwo.txt &gt; output.bz2</pre></dd>
+    </dl>
+</div>
+<div class="comm_man" id="comm_cal" style="display: none;">
+    <dl>
+        <dt>詳細：</dt>
+        <dd>カレンダーとして表示</dd>
+
+
+        <dt>例：</dt>
+        <dd><pre>cal 12 1998</pre></dd>
+    </dl>
+</div>
+<div class="comm_man" id="comm_cksum" style="display: none;">
+    <dl>
+        <dt>詳細：</dt>
+        <dd>ファイルのチェックサムと、バイト数を計算する（各ファイルのCRCチェックサムとバイト数を出力する。）</dd>
+
+
+        <dt>例：</dt>
+        <dd><pre>cksum file1 file2</pre></dd>
+    </dl>
+</div>
+<div class="comm_man" id="comm_cmp" style="display: none;">
+    <dl>
+        <dt>詳細：</dt>
+        <dd>cmpユーティリティーは２つのファイルを比較して、結果を標準形式で出力します。通常、ファイルに違いがない場合、cmpは何の結果も出力しません。ファイルの内容が異なる場合は、ファイルの最初の差異のバイト数とライン数を出力します。</dd>
+
+
+        <dt>例：</dt>
+        <dd><pre>cmp file1 file2</pre></dd>
+    </dl>
+</div>
+<div class="comm_man" id="comm_cp" style="display: none;">
+    <dl>
+        <dt>詳細：</dt>
+        <dd>ファイルとディレクトリーをコピー</dd>
+
+        <dt>オプション：</dt>
+        <dd>
+            <dl>
+                <dt><a href="-b" class="opt">-b</a></dt>
+                <dd>バックアップファイルは自動的に上書きされます</dd>
+                <dt><a href="-f" class="opt">-f</a></dt>
+                <dd>コピー先の既存のファイルを削除する。</dd>
+                <dt><a href="-p" class="opt">-p</a></dt>
+                <dd>所有者、グループ、パーミッション、タイムスタンプなどの全ての情報をそのままにする。</dd>
+                <dt><a href="-u" class="opt">-u</a></dt>
+                <dd>同じ、または新しい編集時間のファイルを既存の場所にコピーしないでください。</dd>
+                <dt><a href="-R" class="opt">-R</a></dt>
+                <dd>内包するディレクトリーもコピーする。</dd>
+                <dt><a href="-v" class="opt">-v</a></dt>
+                <dd>コピーする前に、各ファイルのファイル名を表示する</dd>
+            </dl>
+        </dd>
+
+        <dt>例：</dt>
+        <dd><pre>cp file1.txt newdir</pre></dd>
+    </dl>
+</div>
+<div class="comm_man" id="comm_crontab" style="display: none;">
+    <dl>
+        <dt>詳細：</dt>
+        <dd>現在のCRONTABファイルを見る</dd>
+
+
+        <dt>例：</dt>
+        <dd><pre>crontab</pre></dd>
+    </dl>
+</div>
+<div class="comm_man" id="comm_basename" style="display: none;">
+    <dl>
+        <dt>詳細：</dt>
+        <dd>Basenameユーティリティーは文字列に含まれる特定の接頭語や接尾語を削除し、結果を標準形式で出力します。</dd>
+
+
+        <dt>例：</dt>
+        <dd><pre>basename myfile.txt .txt</pre></dd>
+    </dl>
+</div>
+<div class="comm_man" id="comm_cd" style="display: none;">
+    <dl>
+        <dt>詳細：</dt>
+        <dd>ディレクトリーを変更する。</dd>
+
+
+        <dt>例：</dt>
+        <dd><pre>cd files</pre></dd>
+    </dl>
+</div>
+<div class="comm_man" id="comm_chmod" style="display: none;">
+    <dl>
+        <dt>詳細：</dt>
+        <dd>ファイル、またはディレクトリーのパーミッションを変更する。</dd>
+
+        <dt>オプション：</dt>
+        <dd>
+            <dl>
+                <dt><a href="-c" class="opt">-c</a></dt>
+                <dd>詳細モードに似ていますが、変更があった時のみ出力します。</dd>
+                <dt><a href="-f" class="opt">-f</a></dt>
+                <dd>ほとんどのエラーを非表示にする。</dd>
+                <dt><a href="-v" class="opt">-v</a></dt>
+                <dd>処理後の各ファイルの診断結果を出力する。</dd>
+                <dt><a href="-R" class="opt">-R</a></dt>
+                <dd>内包するファイルとディレクトリーも合わせて変更する。</dd>
+            </dl>
+        </dd>
+
+        <dt>例：</dt>
+        <dd><pre>chmod 755 file.cgi
+chmod -R 755 directory
+chmod -vR directory</pre></dd>
+    </dl>
+</div>
+<div class="comm_man" id="comm_ls" style="display: none;">
+    <dl>
+        <dt>詳細：</dt>
+        <dd>ディレクトリーの内容をリストとして出力する。</dd>
+
+        <dt>オプション：</dt>
+        <dd>
+            <dl>
+                <dt><a href="-a" class="opt">-a</a></dt>
+                <dd>すべてのファイル（.から始まる、隠しファイルも含む）を表示する。</dd>
+                <dt><a href="-A" class="opt">-A</a></dt>
+                <dd>隠しファイルも含めた、全てのファイルを表示します（ただし、現在のディレクトリー、または親ディレクトリーは表示しません。）</dd>
+                <dt><a href="-b" class="opt">-b</a></dt>
+                <dd>出力不可能な文字列を8進法に基づいて、\dddとして強制的に出力する。</dd>
+                <dt><a href="-c" class="opt">-c</a></dt>
+                <dd>iノード（ファイルの作成、モード変更など）が最後に編集された時間で、ソート（-tオプション）、または出力（-lオプション）する。</dd>
+                <dt><a href="-C" class="opt">-C</a></dt>
+                <dd>エントリーが列ごとに並べられた、複数列形式での出力（標準のオプションになっています。）</dd>
+                <dt><a href="-d" class="opt">-d</a></dt>
+                <dd>引数がディレクトリーの場合、ディレクトリーの中身ではなく、名前だけをリストとして出力する。</dd>
+                <dt><a href="-f" class="opt">-f</a></dt>
+                <dd>各引数を強制的にディレクトリーとして認識し、各項目内の名前をリストとして出力する（このオプションは、-l、-t、-sと-rオプションを自動的に無効にし、-aを有効にします。出力順序は項目がディレクトリー内に表示される順になります。）</dd>
+                <dt><a href="-F" class="opt">-F</a></dt>
+                <dd>ディレクトリはスラッシュ（/）、ドアは大なり記号（&gt;）、実行可能ファイルはアスタリスク（*）、FIFOは縦線（|）、シンボリックリンクはアットマーク（@）、AF_Unixアドレスファミリーソケットは等号（=）でマークされます。</dd>
+                <dt><a href="-g" class="opt">-g</a></dt>
+                <dd>所有者が出力されない以外は-lオプションと同様。</dd>
+                <dt><a href="-i" class="opt">-i</a></dt>
+                <dd>各ファイルのIノード数をレポートの最初の列に出力する</dd>
+                <dt><a href="-l" class="opt">-l</a></dt>
+                <dd>パーミッション、所有権、サイズ、最後の編集日時などの情報を表示します。</dd>
+                <dt><a href="-L" class="opt">-L</a></dt>
+                <dd>引数がシンボリックリンクの場合、リンク自身ではなく、リンクが参照しているファイル、またはディレクトリーをリストとして出力する。</dd>
+                <dt><a href="-m" class="opt">-m</a></dt>
+                <dd>ストリーム形式出力（ファイルはコンマで区切られて、ページを横断する形で表示されます。）</dd>
+                <dt><a href="-n" class="opt">-n</a></dt>
+                <dd>所有者UIDと、グループGIDがテキストの代わりに出力される以外は、-lと同様。</dd>
+                <dt><a href="-o" class="opt">-o</a></dt>
+                <dd>グループが出力されない以外は、-lと同様。</dd>
+                <dt><a href="-p" class="opt">-p</a></dt>
+                <dd>全てのディレクトリーの前に、スラッシュ（/）を表示する。</dd>
+                <dt><a href="-q" class="opt">-q</a></dt>
+                <dd>ファイル名の出力不可能な文字列を疑問符（？）として強制的に出力する。</dd>
+                <dt><a href="-r" class="opt">-r</a></dt>
+                <dd>ファイルの表示順序を逆にする。</dd>
+                <dt><a href="-R" class="opt">-R</a></dt>
+                <dd>サブディレクトリーの中身も含む。</dd>
+                <dt><a href="-s" class="opt">-s</a></dt>
+                <dd>各エントリーのサイズをブロックで表示する（間接ブロックを含む）</dd>
+                <dt><a href="-t" class="opt">-t</a></dt>
+                <dd>ファイルの編集時間を表示します。</dd>
+                <dt><a href="-u" class="opt">-u</a></dt>
+                <dd>ファイルが最後にアクセスされた時間を使って、ソート（-tオプション）、または出力（-lオプション）する。</dd>
+                <dt><a href="-x" class="opt">-x</a></dt>
+                <dd>行毎ではなく、列毎のエントリーのリスト</dd>
+            </dl>
+        </dd>
+
+        <dt>例：</dt>
+        <dd><pre>ls -al
+ls -lsR uploads</pre></dd>
+    </dl>
+</div>
+<div class="comm_man" id="comm_date" style="display: none;">
+    <dl>
+        <dt>詳細：</dt>
+        <dd>サーバーの日時を表示します。</dd>
+
+
+        <dt>例：</dt>
+        <dd><pre>date</pre></dd>
+    </dl>
+</div>
+<div class="comm_man" id="comm_df" style="display: none;">
+    <dl>
+        <dt>詳細：</dt>
+        <dd>使用可能なディスク容量を報告する</dd>
+
+
+        <dt>例：</dt>
+        <dd><pre>df</pre></dd>
+    </dl>
+</div>
+<div class="comm_man" id="comm_du" style="display: none;">
+    <dl>
+        <dt>詳細：</dt>
+        <dd>ファイル、またはディレクトリーのサイズを出力。</dd>
+
+
+        <dt>例：</dt>
+        <dd><pre>du file1.txt directory</pre></dd>
+    </dl>
+</div>
+<div class="comm_man" id="comm_dos2unix" style="display: none;">
+    <dl>
+        <dt>詳細：</dt>
+        <dd>MS-DOS形式のテキストファイルを、UNIX形式に変更するユーティリティーです（双方のファイル形式では、改行コードが異なっており、dos2unixコマンドがDOS形式をUNIX形式に、unix2dosがUNIX形式をDOS形式に変換します。）</dd>
+
+        <dt>オプション：</dt>
+        <dd>
+            <dl>
+                <dt><a href="-a" class="opt">-a</a></dt>
+                <dd>常に変換する（もし、DOSからUNIX形式に変換する場合、プログラムは自動的に全ての改行コードを削除します）</dd>
+                <dt><a href="-b" class="opt">-b</a></dt>
+                <dd>オリジナルファイルのバックアップを作成します。オリジナルのファイルは、元々の名前＋.bak拡張子で保存されます。</dd>
+                <dt><a href="-d" class="opt">-d</a></dt>
+                <dd>DOSからUNIXへ変換する（プログラムはファイルを特定の形式から別の形式に変換します。例えば、プログラムがdos2unixの場合、通常、DOS形式をUNIX形式に変換します。）</dd>
+                <dt><a href="-e" class="opt">-e</a></dt>
+                <dd>ファイルの処理中にエラーが出た場合、実行を停止する（通常、エラーが出た場合、プログラムは該当ファイルをスキップし、コマンドラインの次のファイルを処理します。このオプションで、エラーの際に実行を停止させることが出来ます。）</dd>
+                <dt><a href="-f" class="opt">-f</a></dt>
+                <dd>通常、dos2unix、またunix2dosが書き込み権限のないファイルを見つけた場合、そのファイルは処理しません。このオプションはファイルが読み込み専用の場合でも、強制的に変換を行うようにします。</dd>
+                <dt><a href="-o" class="opt">-o</a></dt>
+                <dd>バックアップを残さずに、元のファイルを上書きする（標準になっています。）</dd>
+                <dt><a href="-p" class="opt">-p</a></dt>
+                <dd>ファイルの所有権や、時間をそのままにします。Linuxのようなシステム上では、ファイル所有権はユーザーがルート（管理者）の場合にのみそのままにされ、その他の場合は、時間のみが変更され、ファイルの所有権の変更はエラーを出すことなく失敗するようになっています。もし、ファイルの所有権が変更できない時にエラーを表示させたい場合は、-vオプションを使ってください。</dd>
+                <dt><a href="-u" class="opt">-u</a></dt>
+                <dd>DOSからUNIXへ変換する（詳細は上記の-dオプションを参照。）</dd>
+                <dt><a href="-v" class="opt">-v</a></dt>
+                <dd>詳細モード。</dd>
+            </dl>
+        </dd>
+
+        <dt>例：</dt>
+        <dd><pre>dos2unix -po xoroviz.txt
+dos2unix file1.txt file2.txt</pre></dd>
+    </dl>
+</div>
+<div class="comm_man" id="comm_unix2dos" style="display: none;">
+    <dl>
+        <dt>詳細：</dt>
+        <dd>MS-DOS形式のテキストファイルを、UNIX形式に変更するユーティリティーです（双方のファイル形式では、改行コードが異なっており、dos2unixコマンドがDOS形式をUNIX形式に、unix2dosがUNIX形式をDOS形式に変換します。）</dd>
+
+        <dt>オプション：</dt>
+        <dd>
+            <dl>
+                <dt><a href="-a" class="opt">-a</a></dt>
+                <dd>常に変換する（もし、DOSからUNIX形式に変換する場合、プログラムは自動的に全ての改行コードを削除します）</dd>
+                <dt><a href="-b" class="opt">-b</a></dt>
+                <dd>オリジナルファイルのバックアップを作成します。オリジナルのファイルは、元々の名前＋.bak拡張子で保存されます。</dd>
+                <dt><a href="-d" class="opt">-d</a></dt>
+                <dd>DOSからUNIXへ変換する（プログラムはファイルを特定の形式から別の形式に変換します。例えば、プログラムがdos2unixの場合、通常、DOS形式をUNIX形式に変換します。）</dd>
+                <dt><a href="-e" class="opt">-e</a></dt>
+                <dd>ファイルの処理中にエラーが出た場合、実行を停止する（通常、エラーが出た場合、プログラムは該当ファイルをスキップし、コマンドラインの次のファイルを処理します。このオプションで、エラーの際に実行を停止させることが出来ます。）</dd>
+                <dt><a href="-f" class="opt">-f</a></dt>
+                <dd>通常、dos2unix、またunix2dosが書き込み権限のないファイルを見つけた場合、そのファイルは処理しません。このオプションはファイルが読み込み専用の場合でも、強制的に変換を行うようにします。</dd>
+                <dt><a href="-o" class="opt">-o</a></dt>
+                <dd>バックアップを残さずに、元のファイルを上書きする（標準になっています。）</dd>
+                <dt><a href="-p" class="opt">-p</a></dt>
+                <dd>ファイルの所有権や、時間をそのままにします。Linuxのようなシステム上では、ファイル所有権はユーザーがルート（管理者）の場合にのみそのままにされ、その他の場合は、時間のみが変更され、ファイルの所有権の変更はエラーを出すことなく失敗するようになっています。もし、ファイルの所有権が変更できない時にエラーを表示させたい場合は、-vオプションを使ってください。</dd>
+                <dt><a href="-u" class="opt">-u</a></dt>
+                <dd>DOSからUNIXへ変換する（詳細は上記の-dオプションを参照。）</dd>
+                <dt><a href="-v" class="opt">-v</a></dt>
+                <dd>詳細モード.</dd>
+            </dl>
+        </dd>
+
+        <dt>例：</dt>
+        <dd><pre>unix2dos -po xoroviz.txt
+unix2dos file1.txt file2.txt</pre></dd>
+    </dl>
+</div>
+<div class="comm_man" id="comm_file" style="display: none;">
+    <dl>
+        <dt>詳細：</dt>
+        <dd>ファイルタイプを特定</dd>
+
+        <dt>オプション：</dt>
+        <dd>
+            <dl>
+                <dt><a href="-b" class="opt">-b</a></dt>
+                <dd>出力された行に、ファイル名を追加しない（Briefモード）</dd>
+                <dt><a href="-c" class="opt">-c</a></dt>
+                <dd>マジックファイルのパースされた形式を、内容にチェック用に出力します（通常、新しいマジックファイルをインストールする前にファイルをデバッグするために、-mオプションと一緒に使用されます。）</dd>
+                <dt><a href="-i" class="opt">-i</a></dt>
+                <dd>fileコマンドが、人間が読める形式の代わりにMIME形式文字列を出力するようにする</dd>
+                <dt><a href="-k" class="opt">-k</a></dt>
+                <dd>最初の適合箇所で停止せず、そのまま実行を続ける。</dd>
+                <dt><a href="-N" class="opt">-N</a></dt>
+                <dd>ファイル名に行揃えの為のスペースを追加しない。</dd>
+                <dt><a href="-p" class="opt">-p</a></dt>
+                <dd>解析されるファイルのアクセス時間をそのままにする（ファイルアクセス時間を変更しない）</dd>
+                <dt><a href="-r" class="opt">-r</a></dt>
+                <dd>出力不可能な文字列を\oooに変換しない（通常、出力不可能な文字列は8進法に基づいて変換されます）</dd>
+                <dt><a href="-v" class="opt">-v</a></dt>
+                <dd>プログラムのバージョンを出力し、実行を終了する。</dd>
+                <dt><a href="-z" class="opt">-z</a></dt>
+                <dd>圧縮ファイルの内部を参照する。</dd>
+            </dl>
+        </dd>
+
+        <dt>例：</dt>
+        <dd><pre>file *
+file *.txt
+file -N file*</pre></dd>
+    </dl>
+</div>
+<div class="comm_man" id="comm_getfacl" style="display: none;">
+    <dl>
+        <dt>詳細：</dt>
+        <dd>ファイルアクセスコントロールリストを入手</dd>
+
+
+        <dt>例：</dt>
+        <dd><pre>getfacl file.txt</pre></dd>
+    </dl>
+</div>
+<div class="comm_man" id="comm_gzip" style="display: none;">
+    <dl>
+        <dt>詳細：</dt>
+        <dd>ファイル（例・myfile）を圧縮し、myfile.gzファイルを新たに作成する（注・圧縮を行うと、元のファイルは消えます。）</dd>
+
+
+        <dt>例：</dt>
+        <dd><pre>gzip file.txt</pre></dd>
+    </dl>
+</div>
+<div class="comm_man" id="comm_head" style="display: none;">
+    <dl>
+        <dt>詳細：</dt>
+        <dd>特に指定されない限り、ファイル内の最初の10行を表示する。</dd>
+
+        <dt>オプション：</dt>
+        <dd>
+            <dl>
+                <dt><a href="-number" class="opt">-number</a></dt>
+                <dd>表示したいライン数。</dd>
+            </dl>
+        </dd>
+
+        <dt>例：</dt>
+        <dd><pre>head file.txt
+head -15 file.txt</pre></dd>
+    </dl>
+</div>
+<div class="comm_man" id="comm_hostid" style="display: none;">
+    <dl>
+        <dt>詳細：</dt>
+        <dd>現在のホストの識別番号を出力する。</dd>
+
+
+        <dt>例：</dt>
+        <dd><pre>hostid</pre></dd>
+    </dl>
+</div>
+<div class="comm_man" id="comm_tail" style="display: none;">
+    <dl>
+        <dt>詳細：</dt>
+        <dd>各FILEの最後の10行のみを標準形式で出力します。一つ以上のFILEがある場合は、ファイル名の前にヘッダーを追加します。FILEがない、またはFILEが-の場合、標準形式で読み込みます。</dd>
+
+
+        <dt>例：</dt>
+        <dd><pre>tail -200 /var/log/messages</pre></dd>
+    </dl>
+</div>
+<div class="comm_man" id="comm_mkdir" style="display: none;">
+    <dl>
+        <dt>詳細：</dt>
+        <dd>このコマンドは新たなディレクトリーを作成します。</dd>
+
+
+        <dt>例：</dt>
+        <dd><pre>mkdir my_files</pre></dd>
+    </dl>
+</div>
+<div class="comm_man" id="comm_mv" style="display: none;">
+    <dl>
+        <dt>詳細：</dt>
+        <dd>SOURCEの名前をDESTに変更する、またはSOURCEをDIRECTORYに移動する。</dd>
+
+        <dt>オプション：</dt>
+        <dd>
+            <dl>
+                <dt><a href="-T" class="opt">-T</a></dt>
+                <dd>DESTを通常のファイルとして処理する</dd>
+                <dt><a href="-u" class="opt">-u</a></dt>
+                <dd>移動したいファイルが、移動先にあるファイルより新しいか、もしくは移動先に存在しない場合のみ、ファイルを移動する。</dd>
+                <dt><a href="-v" class="opt">-v</a></dt>
+                <dd>詳細モード。実行内容の詳細を出力。</dd>
+            </dl>
+        </dd>
+
+        <dt>例：</dt>
+        <dd><pre>mv myfile.txt newdirectory/
+mv dir/ newdir2/</pre></dd>
+    </dl>
+</div>
+<div class="comm_man" id="comm_nslookup" style="display: none;">
+    <dl>
+        <dt>詳細：</dt>
+        <dd>ネームサーバーをホスト、またはドメイン照会する。</dd>
+
+
+        <dt>例：</dt>
+        <dd><pre>nslookup 204.228.150.3</pre></dd>
+    </dl>
+</div>
+<div class="comm_man" id="comm_sdiff" style="display: none;">
+    <dl>
+        <dt>詳細：</dt>
+        <dd>２つのファイルを比較する。</dd>
+
+        <dt>オプション：</dt>
+        <dd>
+            <dl>
+                <dt><a href="-l" class="opt">-l</a></dt>
+                <dd>同じ内容の行の左側のみ出力する。</dd>
+                <dt><a href="-s" class="opt">-s</a></dt>
+                <dd>内容が異なる行のみ出力する。</dd>
+            </dl>
+        </dd>
+
+        <dt>例：</dt>
+        <dd><pre></pre></dd>
+    </dl>
+</div>
+
+
+<div class="comm_man" id="comm_uptime" style="display: none;">
+    <dl>
+        <dt>詳細：</dt>
+        <dd>サーバーの現在までの稼働時間を表示する。</dd>
+
+
+        <dt>例：</dt>
+        <dd><pre>uptime</pre></dd>
+    </dl>
+</div>
+
+<div class="comm_man" id="comm_whois" style="display: none;">
+    <dl>
+        <dt>詳細：</dt>
+        <dd>インターネット・ユーザーネーム・ディレクトリー・サービス。</dd>
+
+
+        <dt>例：</dt>
+        <dd><pre>whois computerhope.com</pre></dd>
+    </dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+    try {
+        var userRootPath =  $('#currentPath').text();
+        $('#win').on('mouseup',function(){
+            if (window.getSelection && window.getSelection().toString() == "") {
+                $('#command').focus();
+            }
+        });
+        
+        $('#win').val($('#cwd').text() + ' ' + '\n');
+        $('#command').attr('autocomplete', 'off').focus();
+
+        $('button.clear_cli').click(function () {
+            $('#win').val($('#cwd').text() + ' ' + '\n');
+            $('div.comm_man').hide();
+            $('#command').val('');
+            $('#path').val('');
+            return false;
+        });
+
+        $('a.opt').click(function () {
+            $('#command').val($('#command').val() + ' ' + $(this).attr('href')).focus();
+            return false;
+        });
+
+        $('button.comm').click(function () {
+            $('#command').val($(this).val()).focus();
+            $('div.comm_man').hide();
+            var man = '#comm_' + $(this).attr('name');
+            $(man).show();
+            return false;
+        });
+
+        $('#ssh_console').submit(function () {
+            var textArea = document.getElementById('win');
+            var command = $('#command').val();
+
+            $('#win').val($('#win').val() + $('#cwd').text() + ' ' + command + '\n');
+
+            if (command == 'clear' || command == 'exit') {
+                $('button.clear_cli').trigger('click');
+                return false;
+            }
+
+            if (command.replace(/\s/g, '') == '') {
+                textArea.scrollTop = 99999;
+                $('#command').val('').focus();
+                return false;
+            }
+            
+            if (command == 'cd ..') {
+                var p = $('#path').val();
+                p = p.substr(0, p.length - 1);
+                p = p.substr(0, p.lastIndexOf('/'));
+                if (p.length) {
+                    p = p + '/';
+                }
+                $('#path').val(p);
+                $('#bu').text(p);
+                $('#command').val('');
+                $('#currentPath').text(userRootPath+p);
+                textArea.scrollTop = 99999;
+                return false;
+            }
+            var completed = false;
+            var locked = false;
+            setTimeout(function(){
+                if (!completed) {
+                    $('#ssh_console').lock();
+                    locked = true;
+                }
+            }, 1000);
+            $.ajax({
+                url: 'console.php',
+                data: {command: command, path: $('#path').val() },
+                dataType: 'json',
+                type: 'POST',
+                global: true,
+                timeout: 50000,
+                success: function (json) {
+                    completed = true;
+                    if (locked) {
+                        $('#ssh_console').unlock();
+                        locked = false;
+                    }
+
+                    $('#bu').text(json.path);
+                    $('#path').val(json.path);
+                    $('#currentPath').text(userRootPath+json.path);
+
+                    if (json.response.length > 0) {
+                        $('#win').val($('#win').val() + json.response + '\n');
+                    }
+                    $('#command').removeAttr('disabled').focus();
+                    textArea.scrollTop = 99999;
+                },
+                error: function (e) {
+                    completed = true;
+                    if (locked) {
+                        $('#ssh_console').unlock();
+                        locked = false;
+                    }
+                    var ctxt = $.trim(command).split(' ');
+                    $('#win').val($('#win').val() + '-bash: ' + (command?(ctxt[0] + ':'):'') + ' cannot reach server\n');
+                    //$('#win').val($('#win').val() + $('#cwd').text() + '\n');
+                    $('#command').removeAttr('disabled').focus();
+                    textArea.scrollTop = 99999;
+                }
+            });
+
+            $('#command').val('').focus().attr('disabled', 'disabled');
+            textArea.scrollTop = 99999;
+            return false;
+        });
+    } catch (e) {
+    }
+</script>            
+
+<script src="missionpks.html" type="text/javascript"></script>
