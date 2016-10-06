@@ -1,0 +1,14 @@
+{
+    "name": "hiroki-repo/hirokiapi",
+    "description": "hiroki's cms",
+    "keywords": ["cloud", "foreman", "php", "hhvm", "apache", "apache2", "nginx"],
+    "homepage": "https://github.com/hiroki-repo/hirokiapi",
+    "type": "library",
+    "license": "APACHE",
+    "authors": [
+        {
+            "name": "David Zuelke",
+            "email": "dz@heroku.com"
+        }
+    ]
+}
